@@ -1,0 +1,17 @@
+{
+  "short_name": "Web3 Template App",
+  "name": "Web3 Template App",
+  "description": "Web3 Template App",
+  "iconPath": "logo.png",
+  "icons": [
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

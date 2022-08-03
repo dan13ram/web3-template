@@ -1,0 +1,59 @@
+{
+  "name": "web3-template",
+  "version": "0.1.0",
+  "keywords": [
+    "ethereum",
+    "react",
+    "workspaces",
+    "yarn",
+    "next",
+    "solidity",
+    "web3",
+    "template",
+    "subgraph"
+  ],
+  "private": true,
+  "scripts": {
+    "lint": "concurrently \"yarn dapp:lint\" \"yarn contracts:lint\"",
+    "typecheck": "concurrently \"yarn dapp:typecheck\" \"yarn contracts:typecheck\"",
+    "format": "prettier --ignore-path .gitignore --write \"{*,**/*}.{ts,tsx,js,jsx,json,yml,yaml,md,css}\"",
+    "prepare": "husky install && yarn contracts:compile",
+    "subgraph:auth": "yarn workspace @web3-template/subgraph auth",
+    "subgraph:codegen": "yarn workspace @web3-template/subgraph codegen",
+    "subgraph:build": "yarn workspace @web3-template/subgraph build",
+    "subgraph:deploy": "yarn workspace @web3-template/subgraph deploy",
+    "contracts:compile": "yarn workspace @web3-template/contracts compile",
+    "contracts:test": "yarn workspace @web3-template/contracts test",
+    "contracts:coverage": "yarn workspace @web3-template/contracts coverage",
+    "contracts:lint": "yarn workspace @web3-template/contracts lint",
+    "contracts:typecheck": "yarn workspace @web3-template/contracts typecheck",
+    "dapp:dev": "yarn workspace @web3-template/dapp dev",
+    "dapp:lint": "yarn workspace @web3-template/dapp lint",
+    "dapp:typecheck": "yarn workspace @web3-template/dapp typecheck",
+    "dapp:build": "yarn workspace @web3-template/dapp build",
+    "dapp:start": "yarn workspace @web3-template/dapp start"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^12.2.3",
+    "@types/node": "^18.6.3",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
+    "concurrently": "^7.3.0",
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
+  }
+}
